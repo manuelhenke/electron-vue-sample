@@ -8,13 +8,13 @@ export default new Vuex.Store({
     "name": ""
   },
   mutations: {
-    setNameMutation(state, payload) {
-      state.name = payload
+    setNameMutation(state, name) {
+      state.name = name
     }
   },
   actions: {
-    setNameAction({ commit }, payload) {
-      commit('setNameMutation', payload)
+    setNameAction({ commit }, name) {
+      commit('setNameMutation', name)
     }
   },
   getters: {

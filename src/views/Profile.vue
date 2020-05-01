@@ -1,8 +1,10 @@
 <template>
-  <v-container>
+  <v-container class="profile">
     <v-row class="text-left">
-      <h1>Your Profile</h1>
-      <Form v-on:childToParent="onChildClick" />
+      <v-col class="mb-4">
+        <h1>Your Profile</h1>
+        <Form v-on:childToParent="onChildClick" />
+      </v-col>
     </v-row>
   </v-container>
 </template>

@@ -1,11 +1,10 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col class="mb-4">
-        <v-text-field label="Name" v-model="name" hide-details="auto"></v-text-field>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-form>
+    <v-text-field label="Name" v-model="name" hide-details="auto"></v-text-field>
+    <v-btn v-if="name" class="my-2" tile outlined color="secondary" @click="reset">
+      <v-icon left>mdi-close</v-icon>Reset
+    </v-btn>
+  </v-form>
 </template>
 
 <script>
@@ -18,7 +17,7 @@ export default {
         return this.$store.getters.name;
       },
       set(value) {
-        this.emitToParent(value)
+        this.emitToParent(value);
       }
     }
   },
@@ -27,6 +26,9 @@ export default {
     // This is referenced in the <template> call in the parent. The second parameter is the payload.
     emitToParent(value) {
       this.$emit("childToParent", value);
+    },
+    reset() {
+      this.$emit("childToParent", "");
     }
   }
 };
