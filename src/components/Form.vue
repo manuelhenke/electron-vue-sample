@@ -1,7 +1,7 @@
 <template>
   <v-form>
     <v-text-field label="Name" v-model="name" hide-details="auto"></v-text-field>
-    <v-btn v-if="name" class="my-2" tile outlined color="secondary" @click="reset">
+    <v-btn v-if="name" class="my-4" tile outlined right absolute color="secondary" @click="reset">
       <v-icon left>mdi-close</v-icon>Reset
     </v-btn>
   </v-form>

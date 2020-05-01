@@ -1,13 +1,22 @@
 <template>
-  <v-container class="home">
-    <v-row class="text-center">
-      <v-col class="mb-4">
-        <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-        <HelloWorld :msg="msg" v-bind:name="name" />
-        <ListGroup />
-      </v-col>
-    </v-row>
-  </v-container>
+  <div class="home">
+    <HelloWorld :msg="msg" v-bind:name="name" />
+    <v-container>
+      <v-row class="text-center">
+        <v-col>
+          <v-img :src="require('../assets/logo.svg')" alt="Vuetify logo" contain height="200" />
+        </v-col>
+        <v-col>
+          <v-img :src="require('../assets/logo.png')" alt="Vue logo" contain height="200"/>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col class="mb-4">
+          <ListGroup />
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
