@@ -1,41 +1,42 @@
 <template>
   <v-app id="app">
-    <v-card color="grey lighten-4" flat height="100%" tile>
-      <v-app-bar color="primary" dark>
-        <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+    <!--<v-card color="grey lighten-4" flat height="100%" tile>-->
+    <v-app-bar color="primary" dark elevate-on-scroll app>
+      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
-        <v-toolbar-title>IoSL</v-toolbar-title>
-      </v-app-bar>
+      <v-toolbar-title>Sample Electron-Vue Application</v-toolbar-title>
+    </v-app-bar>
 
-      <v-navigation-drawer v-model="drawer" absolute temporary>
-        <v-list nav dense>
-          <v-list-item-group color="primary">
-            <v-list-item to="/">
-              <v-list-item-icon>
-                <v-icon>mdi-home</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title class="text-left">Home</v-list-item-title>
-            </v-list-item>
+    <v-navigation-drawer v-model="drawer" temporary app>
+      <v-list class="text-left" nav dense>
+        <h1>Menu</h1>
+        <v-list-item-group color="primary">
+          <v-list-item to="/">
+            <v-list-item-icon>
+              <v-icon>mdi-home</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Home</v-list-item-title>
+          </v-list-item>
 
-            <v-list-item to="/profile">
-              <v-list-item-icon>
-                <v-icon>mdi-account</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title class="text-left">Profile</v-list-item-title>
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-navigation-drawer>
+          <v-list-item to="/profile">
+            <v-list-item-icon>
+              <v-icon>mdi-account</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Profile</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
 
-      <!-- <v-app-bar app id="nav">
-        <router-link to="/">Home</router-link>|
-        <router-link to="/profile">Profile</router-link>
-      </v-app-bar>-->
+    <v-content>
+      <router-view />
+    </v-content>
 
-      <v-content>
-        <router-view />
-      </v-content>
-    </v-card>
+    <v-footer>
+      <v-spacer></v-spacer>
+      <div>&copy; {{ new Date().getFullYear() }}</div>
+    </v-footer>
+    <!-- </v-card> -->
   </v-app>
 </template>
 

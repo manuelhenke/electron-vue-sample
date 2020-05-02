@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto" max-width="300" tile>
+  <v-card class="mx-auto" color="grey lighten-4" max-width="300" tile>
     <v-list>
       <v-subheader>USED FRAMEWORKS</v-subheader>
       <v-list-item-group color="primary">
