@@ -19,15 +19,15 @@ export default {
   name: "HelloWorld",
 
   props: {
-    msg: String,
-    name: String
+    defaultMsg: String,
+    userName: String
   },
 
   data: () => ({}),
 
   methods: {
     getMessage() {
-      return this.name ? `Welcome ${this.name}!` : this.msg;
+      return this.userName ? `Welcome ${this.userName}!` : this.defaultMsg;
     }
   }
 };

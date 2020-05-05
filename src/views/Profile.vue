@@ -3,7 +3,7 @@
     <v-row class="text-left">
       <v-col class="mb-4">
         <h1>Your Profile</h1>
-        <Form v-on:childToParent="onChildClick" />
+        <Form v-on:userNameChange="onUserNameChange" />
       </v-col>
     </v-row>
   </v-container>
@@ -18,9 +18,9 @@ export default {
     Form
   },
   methods: {
-    // Triggered when `childToParent` event is emitted by the child.
-    onChildClick(value) {
-      this.$store.dispatch("setNameAction", value);
+    // Triggered when `userNameChange` event is emitted by the child.
+    onUserNameChange(userName) {
+      this.$store.dispatch("setUserName", userName);
     }
   }
 };

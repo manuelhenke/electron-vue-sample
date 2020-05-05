@@ -3,23 +3,25 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+// naming conventions: https://docs.vuestorefront.io/guide/vuex/vuex-conventions.html
 export default new Vuex.Store({
+  strict: process.env.NODE_ENV !== 'production',
   state: {
-    "name": ""
+    "user_name": ""
   },
   mutations: {
-    setNameMutation(state, name) {
-      state.name = name
+    SET_USER_NAME(state, user_name) {
+      state.user_name = user_name
     }
   },
   actions: {
-    setNameAction({ commit }, name) {
-      commit('setNameMutation', name)
+    setUserName({ commit }, user_name) {
+      commit('SET_USER_NAME', user_name)
     }
   },
   getters: {
-    name(state) {
-      return state.name
+    getUserName(state) {
+      return state.user_name
     }
   },
   modules: {

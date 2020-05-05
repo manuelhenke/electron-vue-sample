@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld :msg="msg" v-bind:name="name" />
+    <HelloWorld :defaultMsg="defaultMsg" v-bind:userName="userName" />
     <v-container>
       <v-row class="text-center">
         <v-col>
@@ -31,12 +31,12 @@ export default {
     ListGroup
   },
   computed: {
-    name() {
-      return this.$store.getters.name;
+    userName() {
+      return this.$store.getters.getUserName;
     }
   },
   data: () => ({
-    msg: "Hello World!"
+    defaultMsg: "Hello World!"
   })
 };
 </script>

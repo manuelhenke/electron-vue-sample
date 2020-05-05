@@ -1,7 +1,7 @@
 <template>
   <v-form>
-    <v-text-field label="Name" v-model="name" hide-details="auto"></v-text-field>
-    <v-btn v-if="name" class="my-4" tile outlined right absolute color="secondary" @click="reset">
+    <v-text-field label="Name" v-model="userName" hide-details="auto"></v-text-field>
+    <v-btn v-if="userName" class="my-4" tile outlined color="secondary" @click="resetUserName">
       <v-icon left>mdi-close</v-icon> Reset
     </v-btn>
   </v-form>
@@ -9,26 +9,26 @@
 
 <script>
 export default {
-  data: () => ({}),
   name: "Form",
+  data: () => ({}),
   computed: {
-    name: {
+    userName: {
       get() {
-        return this.$store.getters.name;
+        return this.$store.getters.getUserName;
       },
-      set(value) {
-        this.emitToParent(value);
+      set(userName) {
+        this.emitUserName(userName);
       }
     }
   },
   methods: {
     // Define the method that emits data to the parent as the first parameter to `$emit()`.
     // This is referenced in the <template> call in the parent. The second parameter is the payload.
-    emitToParent(value) {
-      this.$emit("childToParent", value);
+    emitUserName(userName) {
+      this.$emit("userNameChange", userName);
     },
-    reset() {
-      this.$emit("childToParent", "");
+    resetUserName() {
+      this.$emit("userNameChange", "");
     }
   }
 };
